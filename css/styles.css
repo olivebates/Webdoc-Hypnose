@@ -1,26 +1,64 @@
 body {
   margin:0px;
+  background-color:#F2EBE8;
 }
 
-#Content {
+#content {
   top: -1px;
   position: absolute;
 }
 
+
+.firstFlex {
+  display:flex;
+}
+
+/*Text*/
+.margins {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+h1 {
+  color: #573F3D;
+  text-align: center;
+  font-size: 5vw;
+}
+
+#page1 > div > p,
+#page1 > div > div > div > p {
+    color: #573F3D;
+    margin-top: 10vh;
+    margin-bottom:10vh;
+    font-size: 1.8vw;
+    line-height: 2.5vw;
+}
+
+#page2 > div > p {
+  color: #573F3D;
+  margin-top: 50vh;
+  margin-bottom:30vh;
+  font-size: 1.8vw;
+  line-height: 2.5vw;
+}
+
+#page3 > div > p {
+  color: #573F3D;
+  margin-top: 50vh;
+  margin-bottom:30vh;
+  font-size: 1.8vw;
+  line-height: 2.5vw;
+}
+
+
+/*Background images*/
 .background-image {
   position: sticky;
   top: -1px;
-  margin:-20px;
+  margin:0px;
+  width:100vw;
   height:100vh;
 }
-
-#bg1 {}
-
-#bg2 {}
-
-#bg3 {}
-
-#bg4 {}
 
 img {
   object-fit: cover;
@@ -28,13 +66,9 @@ img {
   height: 100%;
   margin:-20px;
 }
-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  margin:0px;
-}
 
+
+/*Progress Bar*/
 #sBack, #sFill {
   position:sticky;
   left:0;
@@ -51,6 +85,6 @@ video {
 
 #sFill {
   background-color:orange;
-  width:500px;
+  width:0px;
   z-index: 2;
 }
