@@ -4,10 +4,6 @@ $(document).ready(function() {
   let sFill = $("#sFill");
   let progress = 0;
 
-
-  let audio = $(document).createElement("audio");
-
-
   let page = 1;
   let yEnd = 0;
 
@@ -27,7 +23,7 @@ $(document).ready(function() {
       break;
 
       case 4:
-        yEnd = $("#page1").height() + $("#page2").height() + $("#page3").height() + $("#page4").height();
+        yEnd = $("#page4").position().top + $("#page4").height();
       break;
 
       default:
@@ -43,13 +39,6 @@ $(document).ready(function() {
         // Scroll Bar logic
         progress = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
         sFill.css("width", "" + progress + "vw");
-    }
-
-    //Sound logic
-    if ($(window).scrollTop() + $(window).height() > $("#footstepSound"))
-    {
-      audio.setAttribute("src", "sounds/footsteps.ogg");
-      audio.play();
     }
   });
 
