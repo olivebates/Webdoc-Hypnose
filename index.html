@@ -7,7 +7,7 @@
   <title>Title</title>
   <meta name="description" content="Description">
   <meta name="author" content="Oliver, Sofie">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,7 +19,6 @@
     <script src="js/scripts.js" type="text/javascript"></script>
 
     <!--Load Audio-->
-    <audio id="sFootsteps" src="footsteps.ogg" type="audio/ogg">Your browser does not support audio. This webdoc is best read with sound on.</audio>
 
     <!--Progress Bar-->
     <div id = "sBack"><br></div>
@@ -33,114 +32,235 @@
     <div id="divider2"><p><br></p></div>
     <div class="background-image" id="bg3"><img src="images/"></div>
 -->
+
+  <image src="images/play.jpg" id="soundButton">
+
     <!--Content-->
       <section>
 
         <!--Page 1-->
-        <article id="page1">
-          <h1>Overskrift</h1>
-          <div><img src="images/billede_3.png"></div>
-          <div class="margins">
+        <article id="page1" style="background-color:#FCFEFC; padding:0px;">
+          <!--Header-->
+          <div class="verticalFlex" style="height:80vh; margin:0px;">
 
-            <!--Intro text-->
-            <p class="smallIndent">Intro: Mange af os gør det nok. Holder vores dybeste sex fantasier hemmelige. Tier stille, når kæresten spørger om, hvilke kinks som giver de bedste  orgasmer.  Eller nikker bekræftende, når folk udtrykker sin foragt overfor måske netop din hemmelige fantasi?</p>
-            <div class="firstFlex">
+            <!--Header Title-->
+            <div><h1>Overskrift</h1></div>
+
+            <!--Header Sound-->
+            <div class="playWrapper">
+              <div class="centeredImage playButton"><image src="images/lyd1.png"></div>
+              <p class="tSubBlack">Fortællingen er bedst med lyd</p>
+            </div>
+
+            <!--Header Image-->
+            <div style="width:100%; height:50vh; margin:0px;"><img src="images/header.jpg" class=""></div>
+          </div>
+
+
+
+          <!--Intro text-->
+          <div class="margins verticalFlex smallIndent" style="height:90vh;">
+
+            <!--Intro Top Text-->
+            <p class="tSlimBlack">Intro: Mange af os gør det nok. Holder vores dybeste sex fantasier hemmelige. Tier stille, når kæresten spørger om, hvilke kinks som giver de bedste  orgasmer.  Eller nikker bekræftende, når folk udtrykker sin foragt overfor måske netop din hemmelige fantasi?</p>
+
+            <!--Intro Middle Text-->
+            <div class="horisontalFlex">
               <div style="width:70%;">
-                <p class="smallIndent">Vi gør det, fordi sex fantasier er et tabu. Og fordi vi er bange for at vores venner stempler os som unormal.</p>
+                <p class=" tSlimBlack">Vi gør det, fordi sex fantasier er et tabu. Og fordi vi er bange for at vores venner stempler os som unormal.</p>
               </div>
               <div style="width:30%;">
-                <p class="smallIndent" style="color:red;">Så mange holder sin sex fantasi tilbageSå mange holder sin sexfantasi tilbageSå mange holder sin sexfantasi tilbage</p>
+                <p class="" style="color:red;">Så mange holder sin sex fantasi tilbageSå mange holder sin sexfantasi tilbageSå mange holder sin sexfantasi tilbage</p>
               </div>
             </div>
-            <p class="smallIndent">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</p>
-            <p class="smallIndent"><strong>“Jeg kan give alle en orgasme, mens de udlever deres vildeste fantasi. Det kræver blot, jeg må hypnotisere dig ind i det”</strong></p>
+
+            <!--Intro Bottom Text-->
+            <p class=" tSlimBlack">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</p>
+
+            <!--Intro Sound Button-->
+            <div class="playWrapper">
+              <div class="centeredImage playButton"><image src="images/play1.png"></div>
+              <p class="tSubBlack">Hør Keld fortælle om, hvad erotisk hypnose er</p>
+            </div>
+
+            <!--Next Arrow-->
+
+            <div id="arrow1" class="playWrapper" style="width:100%;">
+              <div class="centeredImage playButton"><image src="images/nasteside.png"></div>
+              <p class="tSubBlack">Tryk for at læse videre</p>
+            </div>
           </div>
-          <image src="images/arrow.jpg" id="arrow1">
         </article>
+
+
 
         <!--Page 2-->
         <article id="page2">
-          <div class="background-image" id="bg1" style="z-index:-10;"><img src="images/fantasi.jpg"></div>
+          <!--Hvad er Erotisk Hypnose-->
+          <div class="background-image" style="z-index:-10;"><img src="images/fantasi.jpg"></div>
           <div class="margins">
 
-            <!--White text-->
-            <p class="bigIndent" style="margin-top:-50%;"><strong style="color:white;">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</strong></p>
+            <!--Hvad text1-->
+            <p class="tFatWhite bigIndent" style="margin-top:50vh;">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</p>
             <div style="height:5vh;"><p><br></p></div>
-            <p class="bigIndent"><strong id="footstepSound" style="color:white;">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</strong></p>
-            <div style="height:20vh;"><p><br></p></div>
+
+            <!--Hvad text2-->
+            <p class="tFatWhite bigIndent" id="footstepSound" style="margin-bottom:10vh;">Det synes den erfarne erotiske hypnositør, Keld, er en forkert tilgang  til sex. Derfor har han gjort det til en mission, at hjælpe folk med at udleve sin sex fantasi, og få en god orgasme.</p>
+
+            <!--Hvad lyd-->
+            <div class="bigIndent playWrapper" style="margin-top:0px;" id="keld1">
+              <div class="centeredImage playButton"><image src="images/play2.png"></div>
+              <p class="tSubWhite">Hør Keld fortælle om, hvad erotisk hypnose er</p>
+            </div>
           </div>
 
+
+
           <!--Stairs-->
-          <div style="background-color:#F2EBE8; width:100vw; padding-top:10px; z-index:-9;">
-            <div class="margins">
-              <p class="smallIndent">På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad </p>
-              <p class="smallIndent"><strong>Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale. </strong></p>
+          <div style="background-color:#F5F2F0; z-index:-9; padding-top:10vh; padding-bottom:10vh;">
+            <div class="margins verticalFlex" style="height:50vh;">
+
+              <!--Stairs text-->
+              <p class="tSlimBlack">På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad trappen …På vej ned ad </p>
+              <p class="tFatBlack">Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale.</p>
+              <p class="tSlimBlack">Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale.</p>
             </div>
-              <div style="overflow:hidden; height:100vh;"><image src="images/billede_1.png" style="top:0px; float:top;"></div>
-              <div class="margins"><p class="smallIndent" style="margin-top:-50vh; margin-bottom:50vh; color:white;"><strong>Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale. </strong></p></div>
-              <image src="images/arrow.jpg" id="arrow2">
+          </div>
+
+          <!--Threesum Fantasy-->
+          <div class="background-image" style="z-index:-10; margin-top:-60vh; margin-bottom:-40vh;"><img src="images/3sum.jpg"></div>
+          <div class="verticalFlex margins" style="height:90vh;">
+            <div>
+              <p class="tFatWhite">Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale.</p>
+              <div class="playWrapper" id="keld2">
+                <div class="centeredImage playButton"><image src="images/play2.png"></div>
+                <p class="tSubWhite">Hør Keld uddybe fantasien om en trekant</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!--War Fantasy-->
+          <div class="background-image" style="z-index:-9; margin-top:0px; margin-bottom:-100vh;"><img src="images/maskeBrun.jpg"></div>
+          <div class="verticalFlex margins" style="height:90vh;">
+            <div>
+              <p class="tFatWhite">Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale.</p>
+              <div class="playWrapper" id="keld3">
+                <div class="centeredImage playButton"><image src="images/play2.png"></div>
+                <p class="tSubWhite">Hør Keld uddybe fantasien om sex under 2. verdenskrig</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Sofa scene-->
+          <div style="background-color: #F2EBE8; z-index:-8;">
+            <div class="margins verticalFlex" style="height:80vh; padding-top:10vh; padding-bottom:10vh;">
+              <p class="tSlimBlack">I sofahjørnet lyder sniksnakken fra de forskellige hjørner. Nogle nyder en kop the, mens andre snakker højlydt om Kelds foredrag.</p>
+              <p class="tSlimBlack">Her er en hyggeligstemning, og man følger sig velkommen. Det røde lys er skiftet ud med 10 levende lys, som danner ramme for hyggen.</p>
+              <p class="tSlimBlack"> En let påklædt kvinde kommer dansende forbi og siger med et smil ”vi ses om lidt Keld”, inden hun forsvinder af syne. </p>
+              <p class="tSlimBlack">Hun har netop bestilt en session, hvor hun med Kelds hjælp vil opnå adskillige orgasmer. Så vi rejser os fra sofaen og begiver os op på 1. sal, hvor hun venter.</p>
+              <div class="playWrapper" id="keld4">
+                <div class="centeredImage playButton"><image src="images/play1.png"></div>
+                <p class="tSubBlack">Hør en uddybelse af, hvad erotisk hypnose kan gøre for netop dig, hvad man kan opleve og hvad det gør for hans eget sexliv.</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Orgasm-->
+          <div class="background-image" style="z-index:-9;"><img src="images/orgasmebg.jpg"></div>
+          <div class="verticalFlex margins" style="height:150vh;">
+
+            <p class="tSlimWhite">I det samme rum, hvor Keld holdte foredrag, står kvinden klar. Hun står med front mod døren lænet op ad et stort kors. Her er varmt, og man kan mærke at her skal ske noget.</p>
+            <p class="tFatWhite" style="font-style: italic;">“Inden klienterne kommer i hypnose sikrer jeg mig altid at fortælle, hvad som skal ske. At det de oplever er helt normalt. Og fortæller, at de selv kan bestemme, om de vil fortsætte eller ej”</p>
+
+            <div class="playWrapper" id="keld5">
+              <div class="centeredImage playButton"><image src="images/play2.png"></div>
+              <p class="tSubBlack">Hør Keld fortælle Ditte, hvad som skal ske i hypnosen</p>
+            </div>
+
+            <p class="tSlimWhite">Efter at Ditte har været i hypnose i små 5 minutter. Begynder hun så småt optrapningen mod en orgasme. Tryk på videoen for at følge med.</p>
+
+            <div class="playWrapper">
+              <video width="720" controls>
+                <source src="videos/ditte.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+
+            <p class="tSlimWhite">“Som du kan se, er det der med at holde vores sexfantasier hemmelige, en dårlig ide. Sex er helt normalt. Det samme er fantasier. Dittes er måske anderledes end din. Men det betyder ikke at din er forkert. Derfor håber jeg, at du har lyst til at dele dine fantasier med andre en dag”</p>
+
+            <div class="playWrapper" id="keld6">
+              <div class="centeredImage playButton"><image src="images/play2.png"></div>
+              <p class="tSubWhite">Hør Keld fortælle, hvorfor det er så vigtigt at udleve sine fantasier</p>
+            </div>
+          </div>
+
+
+          <!--Fyr aften-->
+          <div style="width:100%; background-color:#F7F2F0;">
+            <div class="verticalFlex margins" style="height:70vh;">
+              <h2>Fyr aften</h2>
+              <p class="tSlimBlack">Ditte har sundet sig, og vi har sagt farvel og på gensyn. På samme måde som Keld pakkede tingene ud, er vi i samarbejde ved at pakke dem sammen.</p>
+              <p class="tSlimBlack">Vi skal følges hjem, og bevæger os derfor atter ned ad trappen med kurs mod hans fiasta 500. På vej ned ad trappen, fortæller Keld med strålende øjne og et stort smil, at hans bonussøn har købt slik til ham i dag. Han venter hjemme. De skal nemlig se Disney Sjov om lidt.</p>
+              <div id="arrow2" class="playWrapper" style="width:100%;">
+                <div class="centeredImage playButton"><image src="images/nasteside.png"></div>
+                <p class="tSubBlack">Tryk for at læse videre</p>
+              </div>
+            </div>
           </div>
         </article>
 
         <!--Page3-->
         <article id="page3">
-          <!--dark quote-->
-          <div class="background-image" id="bg2" style="z-index:-8; margin-bottom:-100vh;"><img src="images/maskeBrun.jpg" style="object-fit:none;"></div>
-          <div class="margins">
-            <p class="bigIndent"><strong style="color:white; margin-bottom:100vh;">Det som måske kan være ekstremt for dig, er måske normalt for en anden. Derfor er ingen sexfantasier unormale. </strong></p>
-          </div>
+          <div style="width:100%; background-color:#FCFEFC;">
+            <div class="verticalFlex" style="height:200vh; margin-left:19.09vw; margin-right:19.09vw;">
 
-          <!--Sofa scene-->
-          <div style="background-color: #F2EBE8; padding-top:2vw;">
-            <div class="margins">
-              <p class="smallIndent">I sofahjørnet lyder sniksnakken fra de forskellige hjørner. Nogle nyder en kop the, mens andre snakker højlydt om Kelds foredrag.</p>
-              <div class="firstFlex" style="margin-left:-15vw;">
-                <div>
-                  <image src="images/orgasm.png" style="object-fit:cover;">
+              <!--Manden Bag-->
+              <div class="horisontalFlex" style="height:50vh;">
+                <div class="verticalFlex" style="width:30vw;">
+                  <h2>Manden Bag</h2>
+                  <p class="tSlimBlack">Efter at Ditte har fået sin orgasme, har Keld fri for i aften. Han pakker derfor sine ting sammen, mens han med fortæller, at hans bonussøn har købt slik til ham i dag. Han venter hjemme.</p>
+                  <div class="playWrapper" id="keld7">
+                    <div class="centeredImage playButton"><image src="images/play1.png"></div>
+                    <p class="tSubBlack">Hør Keld fortælle om sit liv udenfor hans arbejde med erotisk hypnose</p>
+                  </div>
                 </div>
-                <div >
-                  <p class="smallIndent">Her er en hyggeligstemning, og man følger sig velkommen. Det røde lys er skiftet ud med 10 levende lys, som danner ramme for hyggen.</p>
-                  <p class="smallIndent"> En let påklædt kvinde kommer dansende forbi og siger med et smil ”vi ses om lidt Keld”, inden hun forsvinder af syne. </p>
-                  <p class="smallIndent">Hun har netop bestilt en session, hvor hun med Kelds hjælp vil opnå adskillige orgasmer. Så vi rejser os fra sofaen og begiver os op på 1. sal, hvor hun venter.</p>
+                <div class="centeredImage" style="width: 20vw;">
+                  <image src="images/keldMedPendul.jpg" >
                 </div>
               </div>
+
+              <!-- YoutTube -->
+              <div class="verticalFlex" style="height:100vh;">
+                <h2>Andet end Orgasmer</h2>
+                <p class="tSlimBlack">Selvom, at Keld er mester i at give orgasmer, giver han også andre ydelser. Han holder både foredrag, sessioner i hjemmet og han har netop lanceret et <strong>gratis hypnose kursus på sin hjemmeside.</strong> Foruden det, holder han gerne et informativt show med publikum i centrum.</p>
+                <p class="tSlimBlack">Se ser et udklip af et hypnose show. Hele showet kan findes på hans <strong>YouTube kanal.</strong></p>
+
+                <!-- YouTube Video -->
+                <div class="horisontalFlex">
+                  <div style="width:60vw; height:33.75vw;">
+                    <div id="player"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <image src="images/arrow.jpg" id="arrow3">
+
+          <footer>
+            <div style="width:100%; background-color:#3F3F3B;">
+              <div class="verticalFlex" style="text-align: center; height:35vh; margin-left:10vw; margin-right:10vw;">
+                <h2 style="color:white;">Er du også nysgerrig? </h2>
+                <p class="tSlimWhite">Så besøg Kelds hjemmeside, eller meld til til hans <strong>gratis hypnose kursus.</strong></p>
+                <div class="horisontalFlex">
+                  <p class="tFatWhite">Hjemmeside</p>
+                  <p class="tFatWhite">Facebook</p>
+                  <p class="tFatWhite">YouTube</p>
+                </div>
+              </div>
+            </div>
+          </footer>
         </article>
 
-        <!--Page4-->
-        <article id="page4">
-          <!--Orgasm-->
-          <div class="verticalFlex"style="width:100vw; height:100vh; background-color:#1A140E;">
-            <div class="margins">
-              <h1 style="font-size: 3vw;">“Om lidt giver Jeg Ditte en orgasme”</h1>
-              <p class="smallIndent">Kvinden er klar, hun står med front mod døren lænet op ad et stort kors. Her er varmt, og man kan mærke at her skal ske noget.</p>
-              <p class="smallIndent">Keld forsikrer os om, at der intet sker, og at Ditte selv kan bedstemme om hun vil eller ej.</p>
-              <div id="audio"><img id="audioButton"></div>
-              <p class="smallIndent"><strong>Hvordan siger han, for at få hende i hypnose?Hvordan siger han, for at få hende i hypnose?Hvordan siger han, for at få hende i hypnose?</strong></p>
-              <p class="smallIndent">“Som du kan se, er det der med at holde vores sexfantasier hemmelige, en dårlig ide. Sex er helt normalt. Det samme er fantasier. Derfor håber jeg, at du har lyst til at dele dine fantasier med andre en dag”</p>
-            </div>
-          </div>
-          <div class="margins">
-            <h1>Fyr aften</h1>
-            <p class="smallIndent">Efter at Ditte har fået sin orgasme, har Keld fri for i aften. Han pakker derfor sine ting sammen, mens han med strålende stolte øjne og et stort smil fortæller, at hans bonussøn har købt slik til ham i dag. Han venter hjemme. De skal nemlig se Disney Sjov om lidt.  </p>
-          </div>
-          <image src="images/billede_2.png">
-          <div class="margins">
-            <div class="firstFlex">
-              <div>
-                <h1>Manden bag</h1>
-                <p class="smallIndent">Efter at Ditte har fået sin orgasme, har Keld fri for i aften. Han pakker derfor sine ting sammen, mens han med </p>
-                <p class="smallIndent">fortæller, at hans bonussøn har købt slik til ham i dag. Han venter hjemme. De skal nemlig se Disney Sjov om lidt.  </p>
-                <image src="images/arrow.jpg">
-              </div>
-              <div style="width:100%; height:100%;">
-                <image src="images/keldMedPendul.jpg" style="object-fit: stretch; width:100%; height:100%;">
-              </div>
-            </div>
-          </div>
-        </article>
 
 
       </section>

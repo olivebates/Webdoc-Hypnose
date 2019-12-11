@@ -6,12 +6,21 @@ $(document).ready(function() {
 
   let page = 1;
   let yEnd = 0;
+  let soundEntity = 0;
+
+  //Load audio
+  let audioFootsteps = document.createElement('audio');
+  audioFootsteps.setAttribute("src", "sounds/footsteps.ogg");
+  let audioFootstepsFlag = false;
+
+  let audioSiren = document.createElement('audio');
+  audioSiren.setAttribute("src", "sounds/siren.ogg");
 
   $(window).scroll(function(){
     //Get scroll positions
     switch(page) {
       case 1:
-        yEnd = $("#page1").position().top + $("#page1").height()
+        yEnd = $("#page1").position().top + $("#page1").height();
       break;
 
       case 2:
@@ -19,11 +28,7 @@ $(document).ready(function() {
       break;
 
       case 3:
-        yEnd = $("#page3").position().top + $("#page3").height();
-      break;
-
-      case 4:
-        yEnd = $("#page4").position().top + $("#page4").height();
+        yEnd = $(document).height();
       break;
 
       default:
@@ -40,6 +45,28 @@ $(document).ready(function() {
         progress = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
         sFill.css("width", "" + progress + "vw");
     }
+
+    // Play Sounds
+    soundEntity = $("#footstepSound").position();
+    if (soundEntity.top < $(window).scrollTop() + $(window).height())
+    {
+      if (audioFootstepsFlag == false) {
+        audioFootsteps.play();
+        audioFootstepsFlag = true;
+      }
+    }
+
+    // Sound Button
+    $(".soundButton").on("click", function(){
+      if (audioSiren.paused == true) {
+        audioSiren.play();
+        $(".soundButton").attr("src", "images/pause.png");
+      }
+      else {
+        audioSiren.pause();
+        $(".soundButton").attr("src", "images/play.jpg");
+      }
+    });
   });
 
   //Arrows
@@ -51,19 +78,47 @@ $(document).ready(function() {
     page = 3;
     $("html, body").stop().animate({scrollTop:$("#page2").position().top + $("#page2").height()}, 500, 'swing', function(){});
   });
-  $("#arrow3").on("click", function(){
-    page = 4;
-    $("html, body").stop().animate({scrollTop:$("#page3").position().top + $("#page3").height()}, 500, 'swing', function(){});
-  });
-
-  //Update background positions
-  /*function updateBackground(){
-      $("#divider1").css("height", "" + ($("#page1").height() - $("#bg1").height()) + "px");
-      $("#divider2").css("height", "" + ($("#page2").position().top + $("#page2").height() - $("#bg2").height() - $("#bg1").height()) + "px");
-      setTimeout(updateBackground, 100);
-  }
-  updateBackground();*/
-
-  //Force stop scrolling
-
 });
+
+/*************** Youtube Iframe Player API **************/
+/*** Youtube Iframe API, code from: https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player ***/
+/*** Code has been altered to fit the webdoc ***/
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '100%',
+    width: '100%',
+    videoId: 'M7lc1UVf-VE',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo, 6000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
+}

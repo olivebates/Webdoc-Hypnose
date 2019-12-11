@@ -1,6 +1,7 @@
 body {
   margin:0px;
-  background-color:#F2EBE8;
+  padding:0px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #content {
@@ -8,15 +9,26 @@ body {
   position: absolute;
 }
 
-
-.firstFlex {
+/*Flex*/
+.horisontalFlex {
   display:flex;
+  justify-content:space-around;
 }
 
 .verticalFlex {
   display:flex;
-  flex-direction:vertical;
+  flex-direction:column;
   justify-content:space-around;
+}
+
+/*Sound*/
+.playButton {
+  width:7vw;
+  margin-bottom:20px;
+}
+
+.playWrapper {
+  text-align:center;
 }
 
 /*Text*/
@@ -29,38 +41,90 @@ h1 {
   margin-bottom: 0px;
 }
 
-#page1 > #arrow1 {
-  margin-top:5vw;
+h2 {
+  font-size: 3vw;
+  margin:0px;
+  font-weight:lighter;
 }
 
+.tFatWhite {
+  color: white;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  font-weight: bold;
+}
+
+.tSlimWhite {
+  color: white;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+}
+
+.tSlimBlack {
+  color: black;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+}
+
+.tFatBlack {
+  color: black;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  font-weight: bold;
+}
+
+.tSubWhite {
+  color: white;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  font-weight: bold;
+}
+
+.tSubBlack {
+  color: black;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  font-weight: bold;
+}
+
+/*Positioning*/
 .smallIndent{
-    color: #573F3D;
     margin-top: 10vh;
-    font-size: 1.2vw;
-    line-height: 2.5vw;
 }
 
 .bigIndent{
-  color: #573F3D;
   margin-top: 50vh;
   margin-bottom:30vh;
-  font-size: 1.8vw;
-  line-height: 2.5vw;
 }
 
 .margins {
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 30.9vw;
+  margin-right: 30.9vw;
 }
 
+.fit {
+  display:block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.centeredImage {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 /*Background images*/
 .background-image {
   position: sticky;
+  display: block;
   top: -1px;
   margin:0px;
+  margin-top:-100vh;
   width:100vw;
   height:100vh;
+  object-fit: cover;
 }
 
 img {
