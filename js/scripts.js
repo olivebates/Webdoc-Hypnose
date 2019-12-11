@@ -46,28 +46,7 @@ $(document).ready(function() {
         sFill.css("width", "" + progress + "vw");
     }
 
-    // Play Sounds
-    soundEntity = $("#footstepSound").position();
-    if (soundEntity.top < $(window).scrollTop() + $(window).height())
-    {
-      if (audioFootstepsFlag == false) {
-        audioFootsteps.play();
-        audioFootstepsFlag = true;
-      }
-    }
 
-    // Sound Button
-    $(".soundButton").on("click", function(){
-      if (audioSiren.paused == true) {
-        audioSiren.play();
-        $(".soundButton").attr("src", "images/pause.png");
-      }
-      else {
-        audioSiren.pause();
-        $(".soundButton").attr("src", "images/play.jpg");
-      }
-    });
-  });
 
   //Arrows
   $("#arrow1").on("click", function(){
