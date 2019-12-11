@@ -45,6 +45,7 @@ $(document).ready(function() {
         progress = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
         sFill.css("width", "" + progress + "vw");
     }
+  });
 
 
 
