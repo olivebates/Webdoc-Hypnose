@@ -6,25 +6,114 @@ $(document).ready(function() {
 
   let page = 1;
   let yEnd = 0;
-  let soundEntity = 0;
 
   //Load audio
-  let audioFootsteps = document.createElement('audio');
-  audioFootsteps.setAttribute("src", "sounds/footsteps.ogg");
   let audioFootstepsFlag = false;
+  let audio = [document.createElement('audio')];
 
-  let audioSiren = document.createElement('audio');
-  audioSiren.setAttribute("src", "sounds/siren.ogg");
+  //Footsteps audio
+  audio[0].setAttribute("src", "sounds/sFootsteps.ogg");
 
+  //Narration audio
+  for (let i = 1; i <= 8; i++) {
+    audio.push(document.createElement('audio'));
+    audio[i].setAttribute("src", "sounds/sKeld" + i + ".ogg");
+  }
+
+  function fPlayButtonSwitch(element) {
+    let curAtt = element.attr("src");
+
+    switch (curAtt) {
+      case "images/play1.png":
+        element.attr("src", "images/pause1.png");
+      break;
+
+      case "images/play2.png":
+        element.attr("src", "images/pause2.png");
+      break;
+
+      case "images/pause1.png":
+        element.attr("src", "images/play1.png");
+      break;
+
+      case "images/pause2.png":
+        element.attr("src", "images/play2.png");
+      break;
+
+      default:
+        alert("incorrect playbutton image-file: " + curAtt);
+    }
+  }
+
+  // Sound Button Listeners
+  let buttonElement = 0;
+  for (let i = 1; i <= 8; i++) {
+    // Button logic
+    buttonElement = $("#keld"+i);
+    buttonElement.on("click", function(){
+
+      // Save variables
+      let myID = i;
+      let myTag = $("#keld"+myID);
+
+      //Stop footsteps sound
+      if (audio[0].paused == false) {
+        audio[0].pause();
+      }
+
+      //Stop other sounds
+      for (let ii = 1; ii <=8; ii++) {
+        if (ii == myID) {
+          continue;
+        }
+
+        if (audio[ii].paused == false) {
+          audio[ii].pause();
+          audio[ii].currentTime = 0;
+          fPlayButtonSwitch($("#keld"+ii));
+        }
+      }
+
+      //Play my sound
+      if (audio[myID].paused == true) {
+        audio[myID].play();
+        fPlayButtonSwitch(myTag);
+      }
+      else {
+        audio[myID].pause();
+        fPlayButtonSwitch(myTag);
+      }
+    });
+
+    // Sound end
+    $(audio[i]).on("ended", function() {
+      let myID = i;
+      audio[myID].paused = true;
+      audio[myID].currentTime = 0;
+      fPlayButtonSwitch($("#keld"+myID));
+    });
+  }
+
+  let page1 = $("#page1");
+  let page2 = $("#page2");
   $(window).scroll(function(){
+      // Play footstepSound
+      if ($("#footstepSound").position().top < $(window).scrollTop() + $(window).height())
+      {
+        if (audioFootstepsFlag == false) {
+          audio[0].play();
+          audioFootstepsFlag = true;
+        }
+      }
+
     //Get scroll positions
     switch(page) {
       case 1:
-        yEnd = $("#page1").position().top + $("#page1").height();
+        yEnd = page1.position().top + page1.height();
       break;
 
       case 2:
-        yEnd = $("#page2").position().top + $("#page2").height();
+        yEnd = page2.position().top + page2.height();
       break;
 
       case 3:
@@ -47,16 +136,14 @@ $(document).ready(function() {
     }
   });
 
-
-
   //Arrows
   $("#arrow1").on("click", function(){
     page = 2;
-    $("html, body").stop().animate({scrollTop:$("#page1").position().top + $("#page1").height()}, 500, 'swing', function(){});
+    $("html, body").stop().animate({scrollTop:page1.position().top + page1.height()}, 500, 'swing', function(){});
   });
   $("#arrow2").on("click", function(){
     page = 3;
-    $("html, body").stop().animate({scrollTop:$("#page2").position().top + $("#page2").height()}, 500, 'swing', function(){});
+    $("html, body").stop().animate({scrollTop:page2.position().top + page2.height()}, 500, 'swing', function(){});
   });
 });
 
