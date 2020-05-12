@@ -96,15 +96,16 @@ $(document).ready(function() {
 
   let page1 = $("#page1");
   let page2 = $("#page2");
+  let page3 = $("#page3");
   $(window).scroll(function(){
       // Play footstepSound
-      if ($("#footstepSound").position().top < $(window).scrollTop() + $(window).height())
+      /*if ($("#footstepSound").position().top < $(window).scrollTop() + $(window).height())
       {
         if (audioFootstepsFlag == false) {
           audio[0].play();
           audioFootstepsFlag = true;
         }
-      }
+      }*/
 
     //Get scroll positions
     switch(page) {
@@ -113,7 +114,7 @@ $(document).ready(function() {
       break;
 
       case 2:
-        yEnd = page2.position().top + page2.height();
+        yEnd = page3.position().top + page3.height() - window.innerHeight*1.1;
       break;
 
       case 3:
@@ -143,7 +144,7 @@ $(document).ready(function() {
   });
   $("#arrow2").on("click", function(){
     page = 3;
-    $("html, body").stop().animate({scrollTop:page2.position().top + page2.height()}, 500, 'swing', function(){});
+    $("html, body").stop().animate({scrollTop:page3.position().top + page3.height() - window.innerHeight*1.1}, 500, 'swing', function(){});
   });
 });
 
@@ -163,11 +164,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '100%',
     width: '100%',
-    videoId: 'M7lc1UVf-VE',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
+    videoId: 'TpU1lJEa034'
   });
 }
 
