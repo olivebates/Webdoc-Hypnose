@@ -114,10 +114,7 @@ $(document).ready(function() {
       break;
 
       case 2:
-        yEnd = page3.position().top + page3.height() - window.innerHeight*1.1;
-      break;
-
-      case 3:
+        //yEnd = page3.position().top + page3.height() - window.innerHeight*1.1;
         yEnd = $(document).height();
       break;
 
@@ -142,10 +139,10 @@ $(document).ready(function() {
     page = 2;
     $("html, body").stop().animate({scrollTop:page1.position().top + page1.height()}, 500, 'swing', function(){});
   });
-  $("#arrow2").on("click", function(){
+  /*$("#arrow2").on("click", function(){
     page = 3;
     $("html, body").stop().animate({scrollTop:page3.position().top + page3.height() - window.innerHeight*1.1}, 500, 'swing', function(){});
-  });
+  });*/
 });
 
 /*************** Youtube Iframe Player API **************/
