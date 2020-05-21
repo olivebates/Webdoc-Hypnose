@@ -1,14 +1,14 @@
 $(document).ready(function() {
   //Set up variables
-  let sBack = $("#sBack");
-  let sFill = $("#sFill");
+  //let sBack = $("#sBack");
+  //let sFill = $("#sFill");
   let progress = 0;
 
-  let page = 1;
+  let started = false;
   let yEnd = 0;
 
   //Load audio
-  let audioFootstepsFlag = false;
+  //let audioFootstepsFlag = false;
   let audio = [document.createElement('audio')];
 
   //Footsteps audio
@@ -94,55 +94,27 @@ $(document).ready(function() {
     });
   }
 
-  let page1 = $("#page1");
-  let page2 = $("#page2");
-  let page3 = $("#page3");
+  let heroImage = $("#page1");
   $(window).scroll(function(){
-      // Play footstepSound
-      /*if ($("#footstepSound").position().top < $(window).scrollTop() + $(window).height())
-      {
-        if (audioFootstepsFlag == false) {
-          audio[0].play();
-          audioFootstepsFlag = true;
-        }
-      }*/
-
     //Get scroll positions
-    switch(page) {
-      case 1:
-        yEnd = page1.position().top + page1.height();
-      break;
-
-      case 2:
-        //yEnd = page3.position().top + page3.height() - window.innerHeight*1.1;
-        yEnd = $(document).height();
-      break;
-
-      default:
-        alert("no page ID");
-        page = 1;
+    if (started == false) {
+      yEnd = heroImage.position().top + heroImage.height();
+    }
+    else {
+      yEnd = $(document).height();
     }
 
     // Force scroll on page
     if ($(window).scrollTop()+$(window).height() > yEnd) {
       $(window).scrollTop(yEnd-$(window).height());
     }
-    else {
-        // Scroll Bar logic
-        progress = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
-        sFill.css("width", "" + progress + "vw");
-    }
   });
 
-  //Arrows
+  //Arrow
   $("#arrow1").on("click", function(){
-    page = 2;
-    $("html, body").stop().animate({scrollTop:page1.position().top + page1.height()}, 500, 'swing', function(){});
+    started = true;
+    $("html, body").stop().animate({scrollTop:heroImage.position().top + heroImage.height()}, 500, 'swing', function(){});
   });
-  /*$("#arrow2").on("click", function(){
-    page = 3;
-    $("html, body").stop().animate({scrollTop:page3.position().top + page3.height() - window.innerHeight*1.1}, 500, 'swing', function(){});
-  });*/
 });
 
 /*************** Youtube Iframe Player API **************/
