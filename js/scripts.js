@@ -7,19 +7,8 @@ $(document).ready(function() {
   let started = false;
   let yEnd = 0;
 
-  //Load audio
-  //let audioFootstepsFlag = false;
-  let audio = [document.createElement('audio')];
 
-  //Footsteps audio
-  audio[0].setAttribute("src", "sounds/sFootsteps.ogg");
-
-  //Narration audio
-  for (let i = 1; i <= 8; i++) {
-    audio.push(document.createElement('audio'));
-    audio[i].setAttribute("src", "sounds/sKeld" + i + ".ogg");
-  }
-
+  //Audio buttons
   function fPlayButtonSwitch(element) {
     let curAtt = element.attr("src");
 
@@ -45,11 +34,28 @@ $(document).ready(function() {
     }
   }
 
+  //Load audio
+  //let audioFootstepsFlag = false;
+  let audio = [document.createElement('audio')];
+
+  //Footsteps audio
+  audio[0].setAttribute("src", "sounds/sFootsteps.ogg");
+
+  //Narration audio
+  for (let i = 1; i <= 8; i++) {
+    audio.push(document.createElement('audio'));
+    audio[i].setAttribute("src", "sounds/sKeld" + i + ".ogg");
+  }
+
+
+
   // Sound Button Listeners
   let buttonElement = 0;
   for (let i = 1; i <= 8; i++) {
     // Button logic
     buttonElement = $("#keld"+i);
+
+    // When button is clicked
     buttonElement.on("click", function(){
 
       // Save variables
@@ -94,6 +100,13 @@ $(document).ready(function() {
     });
   }
 
+  //Arrow
+  $("#arrow1").on("click", function(){
+    started = true;
+    $("html, body").stop().animate({scrollTop:heroImage.position().top + heroImage.height()}, 500, 'swing', function(){});
+  });
+
+  // Can't scroll past hero image
   let heroImage = $("#page1");
   $(window).scroll(function(){
     //Get scroll positions
@@ -110,11 +123,25 @@ $(document).ready(function() {
     }
   });
 
-  //Arrow
-  $("#arrow1").on("click", function(){
-    started = true;
-    $("html, body").stop().animate({scrollTop:heroImage.position().top + heroImage.height()}, 500, 'swing', function(){});
+
+  // Is element on screen
+  $.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  // Fade In Animation
+  $(window).scroll(function(){
+    $(".animateMe").each(function(index, obj) {
+      if ($(this).isInViewport()) {
+        $(this).addClass("animated").removeClass("animateMe");
+      }
+    });
   });
+
 });
 
 /*************** Youtube Iframe Player API **************/

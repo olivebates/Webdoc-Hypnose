@@ -23,6 +23,40 @@ body {
   top:100vh;
 }
 
+.animateMe {
+  visibility: hidden;
+}
+
+.animated {
+	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /*Text*/
 .overskriftContainer {
   width: 80vw;
@@ -53,14 +87,14 @@ h2 {
 .tFatWhite {
   color: white;
   font-size: 2.5vmin;
-  line-height: 2.5vmin;
+  line-height: 3.5vmin;
   font-weight: bold;
 }
 
 .tSlimWhite {
   color: white;
   font-size: 2.5vmin;
-  line-height: 2.5vmin;
+  line-height: 3.5vmin;
 }
 
 .tSlimBlack {
